@@ -16,5 +16,5 @@
     "freecodecamp"
   ],
   "license": "MIT",
-  "type": "module"
+  "type": "commonjs"
 }
