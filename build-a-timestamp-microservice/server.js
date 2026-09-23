@@ -9,7 +9,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// Xử lý khi không có tham số ngày tháng
 app.get(['/api', '/api/'], (req, res) => {
   const date = new Date();
   res.json({
@@ -18,7 +17,6 @@ app.get(['/api', '/api/'], (req, res) => {
   });
 });
 
-// Xử lý khi có tham số ngày tháng
 app.get('/api/:date', (req, res) => {
   const dateInput = req.params.date;
   let date;
@@ -39,6 +37,6 @@ app.get('/api/:date', (req, res) => {
   });
 });
 
-const listener = app.listen(process.env.PORT || 3000, () => {
+const listener = app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
   console.log('Your app is listening on port ' + listener.address().port);
 });
